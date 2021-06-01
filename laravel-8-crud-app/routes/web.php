@@ -24,6 +24,14 @@ Route::get('/',HomeComponent::class);
 Route::get('/shop',ShopComponent::class);
 Route::get('/cart',CartComponent::class);
 Route::get('/checkout',CheckoutComponent::class);
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
+//user
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+
+});
+//admin
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+
+});
