@@ -74,15 +74,30 @@
 									<a title="myAccount" href="#">{{Auth::user()->name}}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
 										<li class="menu-item" >
-											<a title="Dashboard" href="#">Dashboard</a>
+											<a title="Dashboard" href="{{'/admin/dashboard'}}">Dashboard</a>
 										</li>
+										<li class="menu-item">
+											<a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">logout</a>
+										</li>
+										<form method="POST"  id="logout-form" action="{{route('logout')}}">
+											@csrf
+										
+									</form>
+									
 								@else
 								<li class="menu-item menu-item-has-children parent" >
 									<a title="myAccount" href="#">{{Auth::user()->name}}<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
 										<li class="menu-item" >
-											<a title="Dashboard" href="#">Dashboard</a>
+											<a title="Dashboard" href="{{'/user/dashboard'}}">Dashboard</a>
 										</li>
+										<li class="menu-item">
+											<a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">logout</a>
+										</li>
+										<form method="POST"  id="logout-form" action="{{route('logout')}}">
+											@csrf
+										
+									</form>
 									
 								@endif
 
